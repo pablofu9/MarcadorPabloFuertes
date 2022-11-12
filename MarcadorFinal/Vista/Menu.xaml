@@ -1,0 +1,212 @@
+﻿<Window x:Class="MarcadorFinal.Vista.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarcadorFinal.Vista"
+        mc:Ignorable="d"
+        Title="Menu" Height="450" Width="800" Background="Transparent"
+        AllowsTransparency="true"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown">
+    <Border CornerRadius="50">
+        <Border.Background>
+            <ImageBrush ImageSource="/Vista/fondo.png" />
+        </Border.Background>
+        <Border
+            CornerRadius="50"
+            Opacity="0.8"
+            BorderThickness="5">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462ad8" Offset="0"/>
+                    <GradientStop Color="#da34ae" Offset="0.75"/>
+                    <GradientStop Color="#8a16c1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1b1488" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="30"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="15"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="LOG IN"
+                               Foreground="DarkGray"
+                               FontSize="10"
+                               FontFamily="Monserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="center"
+                               Margin="20,0,0,0"/>
+
+                    <Button x:Name="btnMinimizar"
+                            
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="white"
+                            FontFamily="Montserrat"
+                            FontSize="16"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnMinimizar_Click" Height="30" VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18" CornerRadius="9" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="btnCerrar"
+                            
+                            BorderThickness="0"
+                            Content="x"
+                            Foreground="white"
+                            FontFamily="Montserrat"
+                            FontSize="16"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnCerrar_Click" Height="30" VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18" CornerRadius="9" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+            
+            <StackPanel Width="250"
+                        Grid.Row="2"
+                        Orientation="Vertical"
+                        Margin="0,35,0,0">
+                
+                    <Button x:Name="btnAjustes"
+                            BorderThickness="0"
+                            Content="SETTINGS"
+                            Foreground="white"
+                            FontFamily="Montserrat"
+                            FontSize="16"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,20,0,0"
+                            Click="btnAjustes_Click" Height="50">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462ad8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#28aeed"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnMarcador"
+                            BorderThickness="0"
+                            Content="MARCADOR"
+                            Foreground="white"
+                            FontFamily="Montserrat"
+                            FontSize="16"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,20,0,0"
+                            Click="btnMarcador_Click" Height="50">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462ad8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#28aeed"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnResultados"
+                            BorderThickness="0"
+                            Content="RESULTADOS"
+                            Foreground="white"
+                            FontFamily="Montserrat"
+                            FontSize="16"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,20,0,0"
+                            Click="btnResultados_Click" Height="50">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462ad8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#28aeed"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
+    
+    
+</Window>

@@ -71,6 +71,9 @@ namespace MarcadorFinal.Vista
 
             }catch(Exception ex)
             {
+                Menu m1 = new Menu();
+                m1.Show();
+                this.Close();
                 MessageBox.Show("Fallo al conectar "+ex.Message);
             }
         }
