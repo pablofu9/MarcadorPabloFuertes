@@ -46,7 +46,7 @@
                         <ColumnDefinition Width="15"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="LOG IN"
+                    <TextBlock Text="PARTIDO"
                                Foreground="DarkGray"
                                FontSize="10"
                                FontFamily="Monserrat"

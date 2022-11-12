@@ -39,7 +39,9 @@ namespace MarcadorFinal.Vista
 
         private void btnMarcador_Click(object sender, RoutedEventArgs e)
         {
-
+            VentanaMarcador m1 = new VentanaMarcador();
+            m1.Show();
+            this.Close();
         }
 
         private void btnResultados_Click(object sender, RoutedEventArgs e)

@@ -15,7 +15,7 @@ namespace MarcadorFinal.Conexion
         static string server = "localhost";
         static string database = "marcador";
         static string user = "root";
-        static string password = "pabloygala96";
+        static string password = "root";
         static string puerto = "3306";
 
         string cadenaConexion = "server=" + server + ";" + "port=" + puerto + ";" + "user id=" + user + ";" +

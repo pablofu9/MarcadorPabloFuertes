@@ -175,7 +175,7 @@
                              Margin="0,5,0,0">
 
                     </PasswordBox>
-                    <Button x:Name="btnLogin"
+                    <Button  x:Name="btnLogin"
                             
                             BorderThickness="0"
                             Content="LOG IN"
@@ -196,13 +196,6 @@
                                 </Style.Triggers>
                             </Style>
                         </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
                     </Button>
                 </StackPanel>
             </Grid>
