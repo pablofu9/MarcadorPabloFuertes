@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace MarcadorFinal.Vista
 {
@@ -44,6 +47,32 @@ namespace MarcadorFinal.Vista
         private void btnAcceder_Click(object sender, RoutedEventArgs e)
         {
 
+            try
+            {
+
+
+                Conexion.Conexion con = new Conexion.Conexion();
+                string sentencia = "SELECT * FROM usuarios WHERE user =@User AND password =@Password";
+                con.establecerConexion();
+                MySqlCommand c = new MySqlCommand(sentencia);
+
+                c.Parameters.AddWithValue("@User", txtUser.Text);
+                c.Parameters.AddWithValue("@Password", txtPass.ToString());
+
+                MySqlDataReader r = c.ExecuteReader();
+                if (r.Read())
+                {
+                    MessageBox.Show("Bienvenido");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no reconocido");
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Fallo al conectar "+ex.Message);
+            }
         }
     }
 }
