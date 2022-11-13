@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarcadorFinal
+namespace MarcadorFinal.Clases
 {
     public class PartidoEventArgs : EventArgs
     {
-        public String Ganador { get; set; }
+        public string Ganador { get; set; }
     }
     internal class Marcador
     {
@@ -110,7 +110,7 @@ namespace MarcadorFinal
             {
                 if (tieBreak)
                 {
-                    return (puntos[local].ToString());
+                    return puntos[local].ToString();
                 }
                 else
                 {
@@ -162,7 +162,7 @@ namespace MarcadorFinal
                 if (tieBreak)
                 {
                     /*Trabajamos por valores, el juego se gana cuando un jugador llega a 7 o más y saca dos de ventaja al otro jugador*/
-                    if ((puntos[local] >= 7) && ((puntos[local] - puntos[visitante]) >= 2))
+                    if (puntos[local] >= 7 && puntos[local] - puntos[visitante] >= 2)
                     {
                         puntos[local] = 0;
                         puntos[visitante] = 0;
@@ -177,13 +177,13 @@ namespace MarcadorFinal
                      * Comprobamos que cuando lleguemos a 4 sacamos 2 de ventaja al otro jugador para conseguir el juego, si no sacamos 2 de ventaja estaremos en una situacion de ventaja
                      * por lo que si el otro jugador estaba en ventaja y conseguimos punto estaremos en iguales, si estamos en iguales nos pondremos con ventaja
                      * y si estabamos en ventaja, nos separaremos en 2 por lo que será nuestro el juego*/
-                    if ((puntos[local] >= 4) && ((puntos[local] - puntos[visitante]) >= 2))
+                    if (puntos[local] >= 4 && puntos[local] - puntos[visitante] >= 2)
                     {
                         puntos[local] = 0;
                         puntos[visitante] = 0;
                         JuegoLocal();
                     }
-                    else if ((puntos[local] >= 4) && (puntos[visitante] >= 4))
+                    else if (puntos[local] >= 4 && puntos[visitante] >= 4)
                     {
                         puntos[visitante]--;
                         puntos[local]--;
@@ -207,7 +207,7 @@ namespace MarcadorFinal
                 if (tieBreak)
                 {
                     /*Trabajamos por valores, el juego se gana cuando un jugador llega a 7 o más y saca dos de ventaja al otro jugador*/
-                    if ((puntos[visitante] >= 7) && ((puntos[visitante] - puntos[local]) >= 2))
+                    if (puntos[visitante] >= 7 && puntos[visitante] - puntos[local] >= 2)
                     {
                         puntos[local] = 0;
                         puntos[visitante] = 0;
@@ -222,14 +222,14 @@ namespace MarcadorFinal
                      * Comprobamos que cuando lleguemos a 4 sacamos 2 de ventaja al otro jugador para conseguir el juego, si no sacamos 2 de ventaja estaremos en una situacion de ventaja
                      * por lo que si el otro jugador estaba en ventaja y conseguimos punto estaremos en iguales, si estamos en iguales nos pondremos con ventaja
                      * y si estabamos en ventaja, nos separaremos en 2 por lo que será nuestro el juego*/
-                    if ((puntos[visitante] >= 4) && ((puntos[visitante] - puntos[local]) >= 2))
+                    if (puntos[visitante] >= 4 && puntos[visitante] - puntos[local] >= 2)
                     {
                         puntos[local] = 0;
                         puntos[visitante] = 0;
                         JuegoVisitante();
 
                     }
-                    else if ((puntos[visitante] >= 4) && (puntos[local] >= 4))
+                    else if (puntos[visitante] >= 4 && puntos[local] >= 4)
                     {
                         puntos[visitante]--;
                         puntos[local]--;
@@ -254,7 +254,7 @@ namespace MarcadorFinal
             }
             else
             {
-                if ((marcadorSets[local][SetActivo] >= 6) && ((marcadorSets[local][SetActivo] - marcadorSets[visitante][SetActivo]) >= 2))
+                if (marcadorSets[local][SetActivo] >= 6 && marcadorSets[local][SetActivo] - marcadorSets[visitante][SetActivo] >= 2)
                 {
                     SetLocal();
 
@@ -265,7 +265,7 @@ namespace MarcadorFinal
             //Debug.WriteLine("Set visitante {0}", marcadorSets[visitante, SetActivo]);
 
             //Si en el set vamos 6-6 pasamos a situacion de tieBreak
-            if ((marcadorSets[local][SetActivo] == 6) && (marcadorSets[visitante][SetActivo] == 6))
+            if (marcadorSets[local][SetActivo] == 6 && marcadorSets[visitante][SetActivo] == 6)
             {
                 tieBreak = true;
                 puntos[local] = 0;
@@ -284,7 +284,7 @@ namespace MarcadorFinal
             }
             else
             {
-                if ((marcadorSets[visitante][SetActivo] >= 6) && ((marcadorSets[visitante][SetActivo] - marcadorSets[local][SetActivo]) >= 2))
+                if (marcadorSets[visitante][SetActivo] >= 6 && marcadorSets[visitante][SetActivo] - marcadorSets[local][SetActivo] >= 2)
                 {
                     SetVisitante();
                 }
@@ -293,7 +293,7 @@ namespace MarcadorFinal
             //Debug.WriteLine("Set visitante  {0}", marcadorSets[visitante, SetActivo]);
 
             //Si en el set vamos 6-6 pasamos a situacion de tieBreak
-            if ((marcadorSets[local][SetActivo] == 6) && (marcadorSets[visitante][SetActivo] == 6))
+            if (marcadorSets[local][SetActivo] == 6 && marcadorSets[visitante][SetActivo] == 6)
             {
                 tieBreak = true;
                 puntos[local] = 0;
@@ -306,7 +306,7 @@ namespace MarcadorFinal
         private void SetLocal()
         {
             SetsLocales++;
-            if (SetsLocales > (numSets / 2))
+            if (SetsLocales > numSets / 2)
             {
                 partidoFinalizado = true;
                 OnPartidoFinalizado(JugadorLocal);
@@ -322,7 +322,7 @@ namespace MarcadorFinal
         private void SetVisitante()
         {
             SetsVisitantes++;
-            if (SetsVisitantes > (numSets / 2))
+            if (SetsVisitantes > numSets / 2)
             {
                 partidoFinalizado = true;
                 OnPartidoFinalizado(JugadorVisitante);

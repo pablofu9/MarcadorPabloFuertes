@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MarcadorFinal.Vista
 {
     /// <summary>
-    /// Lógica de interacción para Menu.xaml
+    /// Lógica de interacción para Resultados.xaml
     /// </summary>
-    public partial class Menu : Window
+    public partial class Resultados : Window
     {
-        public Menu()
+        public Resultados()
         {
             InitializeComponent();
         }
@@ -31,33 +31,20 @@ namespace MarcadorFinal.Vista
             }
 
         }
-
-        private void btnAjustes_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnMarcador_Click(object sender, RoutedEventArgs e)
-        {
-            VentanaMarcador m1 = new VentanaMarcador();
-            m1.Show();
-            this.Close();
-        }
-
-        private void btnResultados_Click(object sender, RoutedEventArgs e)
-        {
-            Resultados r = new Resultados();
-            r.Show();
-            this.Close();
-        }
-
-        private void btnMinimizar_Click(object sender, RoutedEventArgs e)
+        private void btnMinimizar_Click(Object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
-        private void btnCerrar_Click(object sender, RoutedEventArgs e)
+        private void btnCerrar_Click(Object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            Menu m1 = new Menu();
+            m1.Show();
             this.Close();
         }
     }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MarcadorFinal.Clases;
 
 namespace MarcadorFinal.Vista
 {
@@ -82,6 +83,8 @@ namespace MarcadorFinal.Vista
             }
             else
             {
+                BtnPoinsPlayer1.IsEnabled = true;
+                BtnPoinsPlayer2.IsEnabled = true;
                 BtnEdit.Content = "Edición off";
                 BtnEdit.Background = new SolidColorBrush(Colors.DarkRed);
                 
@@ -103,6 +106,9 @@ namespace MarcadorFinal.Vista
             BtnPoinsPlayer1.IsEnabled = false;
             BtnPoinsPlayer2.IsEnabled = false;
             MessageBox.Show("El ganador del partido es: " + e.Ganador);
+            this.Close();
+            Menu menu = new Menu();
+            menu.Show();
         }
     }
     }
