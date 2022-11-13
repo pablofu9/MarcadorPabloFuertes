@@ -15,7 +15,7 @@
 
     <Border CornerRadius="50">
         <Border.Background>
-            <ImageBrush ImageSource="/Vista/fondo.png" />
+            <ImageBrush ImageSource="/Vista/fondo.jpg" />
         </Border.Background>
         <Border
             CornerRadius="50"

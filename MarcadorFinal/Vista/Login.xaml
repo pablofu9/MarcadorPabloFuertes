@@ -15,7 +15,8 @@
 
     <Border CornerRadius="50">
         <Border.Background>
-            <ImageBrush ImageSource="/Vista/fondo.png" />
+            <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+ 
 
         </Border.Background>
         <Border
@@ -121,9 +122,10 @@
                                 Grid.Row="2"
                                 Orientation="Vertical"
                                 Margin="0,35,0,0">
-                    <Image
-                           Width="160"
-                           Height="160" Source="ogo.png" />
+
+
+                    <Image Width="160"
+                           Height="160" Source="/Vista/silueta.png" />
 
                     <TextBlock Text="Mi marcador"
                                Foreground="white"

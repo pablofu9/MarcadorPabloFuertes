@@ -8,8 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Vista\fondo.jpg" />
+    <None Remove="Vista\fondo.png" />
+    <None Remove="Vista\logo.png" />
+    <None Remove="Vista\silueta.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.31" />
     <PackageReference Include="MySqlConnector" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Vista\fondo.jpg" />
+    <Resource Include="Vista\silueta.png" />
   </ItemGroup>
 
 </Project>
