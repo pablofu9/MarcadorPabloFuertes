@@ -125,7 +125,7 @@
 
 
                     <Image Width="160"
-                           Height="160" Source="/Vista/silueta.png" />
+                           Height="160" Source="/Vista/silueta2.png"  />
 
                     <TextBlock Text="Mi marcador"
                                Foreground="white"

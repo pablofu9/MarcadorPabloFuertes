@@ -11,7 +11,9 @@
     <None Remove="Vista\fondo.jpg" />
     <None Remove="Vista\fondo.png" />
     <None Remove="Vista\logo.png" />
+    <None Remove="Vista\selieta.jpg" />
     <None Remove="Vista\silueta.png" />
+    <None Remove="Vista\silueta2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +23,9 @@
 
   <ItemGroup>
     <Resource Include="Vista\fondo.jpg" />
+    <Resource Include="Vista\selieta.jpg" />
     <Resource Include="Vista\silueta.png" />
+    <Resource Include="Vista\silueta2.png" />
   </ItemGroup>
 
 </Project>

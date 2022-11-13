@@ -39,6 +39,7 @@
                     <RowDefinition  Height="30"/>
                     <RowDefinition />
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <Grid>
@@ -114,13 +115,14 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <StackPanel Margin="101,70,97,-261">
+                    <StackPanel Margin="95,70,97,-377">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"/>
                                 <RowDefinition Height="40"/>
                                 <RowDefinition Height="40"/>
                                 <RowDefinition Height="40"/>
+                                <RowDefinition Height="80"/>
                                 <RowDefinition Height="80"/>
                             </Grid.RowDefinitions>
 
@@ -131,6 +133,7 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                                 <ColumnDefinition />
+                                
                             </Grid.ColumnDefinitions>
                             <TextBox Text="Jose Luis" Width="90" Background="Transparent" Foreground="white" FontSize="20"
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="0" IsEnabled="false"/>
@@ -167,6 +170,34 @@
                             
                             Grid.Row="4"
                             Click="btnPoinsPlayer1_Click" Grid.ColumnSpan="2" Margin="3,5,53,10">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#462ad8"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#28aeed"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="BtnVolver"
+                            BorderThickness="0"
+                            Content="Volver"
+                            Foreground="white"
+                            FontFamily="Montserrat"
+                            FontSize="14"
+                            Cursor="Hand"
+                            
+                            Grid.Row="5"
+                            Click="btnVolver_Click" Grid.ColumnSpan="2" Margin="3,5,53,10">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background" Value="#462ad8"/>
@@ -241,6 +272,7 @@
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
+
                         </Grid>
 
                     </StackPanel>

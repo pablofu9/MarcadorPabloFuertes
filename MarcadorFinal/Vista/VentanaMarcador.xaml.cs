@@ -110,6 +110,13 @@ namespace MarcadorFinal.Vista
             Menu menu = new Menu();
             menu.Show();
         }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            Menu m1 = new Menu();
+            m1.Show();
+            this.Close();
+        }
     }
     }
 
