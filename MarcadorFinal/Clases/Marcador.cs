@@ -22,7 +22,7 @@ namespace MarcadorFinal.Clases
         private const int local = 0;
         private const int visitante = 1;
         private bool tieBreak;
-
+        
         //Delegado para el evento de finalización del partido
 
         //Paso 1: crear delegado

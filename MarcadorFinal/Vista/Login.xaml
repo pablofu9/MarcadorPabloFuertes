@@ -16,7 +16,7 @@
     <Border CornerRadius="50">
         <Border.Background>
             <ImageBrush ImageSource="/Vista/fondo.png" />
- 
+
         </Border.Background>
         <Border
             CornerRadius="50"
@@ -123,7 +123,7 @@
                                 Margin="0,35,0,0">
                     <Image
                            Width="160"
-                           Height="160" Source="/Vista/logo.png" />
+                           Height="160" Source="ogo.png" />
 
                     <TextBlock Text="Mi marcador"
                                Foreground="white"
