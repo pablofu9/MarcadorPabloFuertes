@@ -53,16 +53,20 @@ namespace MarcadorFinal.Vista
 
                 Conexion.Conexion con = new Conexion.Conexion();
                 string sentencia = "SELECT * FROM usuarios WHERE user =@User AND password =@Password";
-                con.establecerConexion();
-                MySqlCommand c = new MySqlCommand(sentencia);
+                
+                MySqlCommand c = new MySqlCommand(sentencia,con.establecerConexion());
 
                 c.Parameters.AddWithValue("@User", txtUser.Text);
-                c.Parameters.AddWithValue("@Password", txtPass.ToString());
+                
 
+                c.Parameters.AddWithValue("@Password", txtPass.Password.ToString());
                 MySqlDataReader r = c.ExecuteReader();
                 if (r.Read())
                 {
-                    MessageBox.Show("Bienvenido");
+                    MessageBox.Show("Bienvenido: "+txtUser.Text);
+                    Menu m1 = new Menu();
+                    m1.Show();
+                    this.Close();
                 }
                 else
                 {
@@ -71,9 +75,7 @@ namespace MarcadorFinal.Vista
 
             }catch(Exception ex)
             {
-                Menu m1 = new Menu();
-                m1.Show();
-                this.Close();
+               
                 MessageBox.Show("Fallo al conectar "+ex.Message);
             }
         }

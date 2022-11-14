@@ -1,10 +1,12 @@
-﻿using MySqlConnector;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MySql.Data.MySqlClient;
+
 
 namespace MarcadorFinal.Conexion
 {
@@ -15,7 +17,7 @@ namespace MarcadorFinal.Conexion
         static string server = "localhost";
         static string database = "marcador";
         static string user = "root";
-        static string password = "root";
+        static string password = "pabloygala96";
         static string puerto = "3306";
 
         string cadenaConexion = "server=" + server + ";" + "port=" + puerto + ";" + "user id=" + user + ";" +
