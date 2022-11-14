@@ -20,13 +20,36 @@ namespace MarcadorFinal.Vista
     /// </summary>
     public partial class Ajustes : Window
     {
-
-        int numeroSets;
+        String players1;
+        String players2;
+        String numeroSets;
         string tipo;
 
         public Ajustes()
         {
+            string[] lines = System.IO.File.ReadAllLines(@"C:\DAM\INTERFACES\ENTREGAS\MarcadorFinal\MarcadorFinal\MarcadorFinal\ajustes.txt");
+            tipo = lines[0];
+            numeroSets = lines[1];
+            players1 = lines[2];
+            players2 = lines[3];
+            
             InitializeComponent();
+
+            player1.Text = players1;
+            player2.Text = players2;
+
+            if (tipo.Equals("padel"))
+            {
+                ItemPadel.IsSelected=true;
+            }
+            else
+            {
+                ItemTennis.IsSelected = true;
+            }
+
+            if (numeroSets.Equals("3"){
+                
+            }
         }
         private void Window_MouseDown(Object sender, MouseButtonEventArgs e)
         {
@@ -70,13 +93,13 @@ namespace MarcadorFinal.Vista
             {
                 
                 archivo.WriteLine(
-                    "Tipo de Juego:" + tipo
-                    + "\n"
-                    + "Sets:" + numeroSets
-                    + "\n"
-                    + "Jugador1 :" + player1.Text
-                    +"\n"
-                     + "Jugador 2: " + player2.Text
+                    tipo
+                    + "\n"+
+                    numeroSets
+                    + "\n"+
+                    player1.Text
+                    +"\n"+
+                    player2.Text
                     );
 
             }

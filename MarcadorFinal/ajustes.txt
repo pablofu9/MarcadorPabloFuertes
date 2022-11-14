@@ -1,4 +1,4 @@
-Tipo de Juego:tenis
-Sets:5
-Jugador1 :pedro
-Jugador 2: fer
+tenis
+5
+Luis
+Ramon

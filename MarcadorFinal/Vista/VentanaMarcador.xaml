@@ -137,8 +137,8 @@
                                 <ColumnDefinition />
 
                             </Grid.ColumnDefinitions>
-                            <TextBox Text="Jose Luis" Width="90" Background="Transparent" Foreground="white" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="0" IsEnabled="false"/>
+                            <Label x:Name="txtPlayers1"  Width="130" Background="Transparent" Foreground="white" FontSize="20"
+                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="0" />
                             <Rectangle Stroke="#6400FF" Fill="#6400FF"  Grid.Row="1" Grid.ColumnSpan="7" Margin="0,10,0,20" />
                             <TextBox x:Name="TextSet1Player1" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="1" IsEnabled="false"/>
@@ -152,8 +152,8 @@
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="5" IsEnabled="false" Visibility="Hidden"/>
 
 
-                            <TextBox Text="Pedro" Width="90" Background="Transparent" Foreground="white" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="0" Grid.Row="2" IsEnabled="False"/>
+                            <Label x:Name="txtPlayers2"  Width="130" Background="Transparent" Foreground="white" FontSize="20"
+                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="0" Grid.Row="2" />
                             <TextBox x:Name="TextSet1Player2" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="1" IsEnabled="false" Grid.Row="2"/>
                             <TextBox x:Name="TextSet2Player2" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"

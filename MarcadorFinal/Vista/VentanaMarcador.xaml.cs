@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,34 @@ namespace MarcadorFinal.Vista
     /// </summary>
     public partial class VentanaMarcador : Window
     {
-        Marcador miMarcador = new Marcador("Jose", "Pepe", 3);
+       
+        String tipo;
+        String players1;
+        String players2;
+        int sets;
+        Marcador miMarcador;
+
+
         private bool estadoEdicion;
         public VentanaMarcador()
         {
+            
             InitializeComponent();
 
+            //GUARDA LAS LINEAS DEL ARCHIVO EN UN ARAY
+            string[] lines = System.IO.File.ReadAllLines(@"C:\DAM\INTERFACES\ENTREGAS\MarcadorFinal\MarcadorFinal\MarcadorFinal\ajustes.txt");
+            tipo = lines[0];
+            
+            players1 = lines[2];
+            players2 = lines[3];
             estadoEdicion = false;
+            miMarcador = new Marcador(players1, players2, 3);
+            txtPlayers1.Content = players1;
+            txtPlayers2.Content = players2;
             miMarcador.PartidoFinalizado += OnPartidoFinalizado;
         }
 
+        
         private void Window_MouseDown(Object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
