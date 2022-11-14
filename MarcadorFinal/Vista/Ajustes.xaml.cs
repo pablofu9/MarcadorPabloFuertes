@@ -47,9 +47,7 @@ namespace MarcadorFinal.Vista
                 ItemTennis.IsSelected = true;
             }
 
-            if (numeroSets.Equals("3"){
-                
-            }
+            
         }
         private void Window_MouseDown(Object sender, MouseButtonEventArgs e)
         {
