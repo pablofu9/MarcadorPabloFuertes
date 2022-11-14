@@ -22,14 +22,14 @@ namespace MarcadorFinal.Vista
     {
         String players1;
         String players2;
-        String numeroSets;
+        int numeroSets;
         string tipo;
 
         public Ajustes()
         {
             string[] lines = System.IO.File.ReadAllLines(@"C:\DAM\INTERFACES\ENTREGAS\MarcadorFinal\MarcadorFinal\MarcadorFinal\ajustes.txt");
             tipo = lines[0];
-            numeroSets = lines[1];
+            
             players1 = lines[2];
             players2 = lines[3];
             
