@@ -36,13 +36,14 @@ namespace MarcadorFinal.Vista
             InitializeComponent();
 
             //GUARDA LAS LINEAS DEL ARCHIVO EN UN ARAY
-            string[] lines = System.IO.File.ReadAllLines(@"C:\DAM\INTERFACES\ENTREGAS\MarcadorFinal\MarcadorFinal\MarcadorFinal\ajustes.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"D:\DAM\INTERFACES\MarcadorDefinitivoGIT\MarcadorFinal\ajustes.txt");
             tipo = lines[0];
-            
+            sets = Int16.Parse(lines[1]);
             players1 = lines[2];
             players2 = lines[3];
             estadoEdicion = false;
-            miMarcador = new Marcador(players1, players2, 3);
+
+            miMarcador = new Marcador(players1, players2, sets);
             txtPlayers1.Content = players1;
             txtPlayers2.Content = players2;
             miMarcador.PartidoFinalizado += OnPartidoFinalizado;

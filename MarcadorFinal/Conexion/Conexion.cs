@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace MarcadorFinal.Conexion
         static string server = "localhost";
         static string database = "marcador";
         static string user = "root";
-        static string password = "pabloygala96";
+        static string password = "root";
         static string puerto = "3306";
 
         string cadenaConexion = "server=" + server + ";" + "port=" + puerto + ";" + "user id=" + user + ";" +
@@ -29,7 +30,7 @@ namespace MarcadorFinal.Conexion
             {
                 con.ConnectionString = cadenaConexion;
                 con.Open();
-                MessageBox.Show("Conexion a la base correcta");
+                
             }
             catch (MySqlException e)
             {
@@ -43,24 +44,7 @@ namespace MarcadorFinal.Conexion
             con.Close();
         }
 
-        public void buscarUsuario(string user, string pass)
-        {
-            try
-            {
-                establecerConexion();
-                string sentencia = "SELECT * FROM usuarios WHERE user =@User AND password =@Password";
-                var cmd = new MySqlCommand(sentencia, con);
-                cmd.Parameters.AddWithValue("@User", user);
-                cmd.Parameters.AddWithValue("@Password", pass);
-                cmd.ExecuteReader();
-                MessageBox.Show("Login correcto, bienvenido " + user);
-
-            }catch(Exception ex)
-            {
-                MessageBox.Show("Login failed");
-            }
-           
-        }
+        
     }
     
 }

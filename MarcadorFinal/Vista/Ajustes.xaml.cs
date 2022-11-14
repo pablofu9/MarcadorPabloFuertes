@@ -27,14 +27,15 @@ namespace MarcadorFinal.Vista
 
         public Ajustes()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\DAM\INTERFACES\ENTREGAS\MarcadorFinal\MarcadorFinal\MarcadorFinal\ajustes.txt");
-            tipo = lines[0];
             
+            string[] lines = System.IO.File.ReadAllLines(@"D:\DAM\INTERFACES\MarcadorDefinitivoGIT\MarcadorFinal\ajustes.txt");
+            tipo = lines[0];
+            numeroSets = Int16.Parse(lines[1]);
             players1 = lines[2];
             players2 = lines[3];
             
-            InitializeComponent();
-
+            
+            /*
             player1.Text = players1;
             player2.Text = players2;
 
@@ -46,8 +47,9 @@ namespace MarcadorFinal.Vista
             {
                 ItemTennis.IsSelected = true;
             }
+            */
+            InitializeComponent();
 
-            
         }
         private void Window_MouseDown(Object sender, MouseButtonEventArgs e)
         {
@@ -87,7 +89,7 @@ namespace MarcadorFinal.Vista
             }
 
             //PARA SOBREESCRIBIR EL ARCHIVO
-            using (StreamWriter archivo = new StreamWriter(@"C:\DAM\INTERFACES\ENTREGAS\MarcadorFinal\MarcadorFinal\MarcadorFinal\ajustes.txt", false))
+            using (StreamWriter archivo = new StreamWriter(@"D:\DAM\INTERFACES\MarcadorDefinitivoGIT\MarcadorFinal\ajustes.txt", false))
             {
                 
                 archivo.WriteLine(
@@ -101,6 +103,10 @@ namespace MarcadorFinal.Vista
                     );
 
             }
+
+            Menu m1 = new Menu();
+            m1.Show();
+            this.Close();
         }
 
 

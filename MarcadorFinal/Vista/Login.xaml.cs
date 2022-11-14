@@ -52,7 +52,7 @@ namespace MarcadorFinal.Vista
 
 
                 Conexion.Conexion con = new Conexion.Conexion();
-                string sentencia = "SELECT * FROM usuarios WHERE user =@User AND password =@Password";
+                string sentencia = "SELECT * FROM usuarios WHERE nombre =@User AND pass =@Password";
                 
                 MySqlCommand c = new MySqlCommand(sentencia,con.establecerConexion());
 

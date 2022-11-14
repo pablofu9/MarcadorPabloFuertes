@@ -113,92 +113,39 @@
                     </Button>
 
                 </Grid>
-
-                <StackPanel
-                        Grid.Row="1"
-                        Orientation="Vertical"
-                        Margin="164,35,53,149">
-
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                        </Grid.RowDefinitions>
-
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition />
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <TextBox Text="JUGADORES" Width="90"   Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="0"  Grid.Row="0"/>
-                        <TextBox Text="PARTIDOS" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="1"  Grid.Row="0"/>
-
-                        <Rectangle Stroke="#6400FF" Fill="#6400FF"  Grid.Row="1" Grid.ColumnSpan="5" Margin="0,10,0,20"/>
-
-                        <TextBox Text="VICTORIAS" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="2"  Grid.Row="0"/>
-                        <TextBox Text="DERROTAS" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="3"  Grid.Row="0"/>
-                        <TextBox Text="Jose Luis" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="0"  Grid.Row="2"/>
-                        <TextBox Text="Pepe" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="0"  Grid.Row="3"/>
-
-
-                        <TextBox x:Name="jug1Partidos" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="1"  Grid.Row="2"/>
-                        <TextBox  x:Name="ju1Victorias" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="2"  Grid.Row="2"/>
-                        <TextBox x:Name="jug1Derrotas"  Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="3"  Grid.Row="2"/>
-
-
-                        <TextBox  x:Name="jug2Partidos" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="1"  Grid.Row="3"/>
-
-                        <TextBox x:Name="ju2Victorias" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="2"  Grid.Row="3"/>
-
-                        <TextBox x:Name="jug2Derrotas" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="16"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="3"  Grid.Row="3"/>
-                        <Button x:Name="btnVolver"
+                <StackPanel Margin="177,310,159,46" Grid.Row="1">
+                    <Button  x:Name="btnVolverMenu"
+                            
                             BorderThickness="0"
                             Content="Volver"
                             Foreground="white"
                             FontFamily="Montserrat"
-                            FontSize="14"
+                            FontSize="16"
                             Cursor="Hand"
-                            
-                            Grid.Row="4"
-                            Click="btnVolver_Click" Grid.ColumnSpan="2" Margin="3,5,72,-37">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#462ad8"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#28aeed"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="center" HorizontalAlignment="center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                        </Button>
-                    </Grid>
+                            Click="btnVolverMenu_Click" Height="39" Width="320">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#462ad8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#28aeed"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                 </StackPanel>
+                <DataGrid ItemsSource="{Binding}" Background="Transparent" AutoGenerateColumns="False" CanUserAddRows="False" x:Name="tabla" Margin="177,34,174,160" Grid.Row="1"  Loaded="tabla_Loaded" IsReadOnly="True" BorderBrush="#FF238AEF" Foreground="Red" >
+                    <DataGrid.Columns >
+                        <DataGridTextColumn   Header="Nombre" Width="150" Binding="{Binding nombre}"/>
+                        <DataGridTextColumn  Header="Deporte" Width="100" Binding="{Binding deporte}"/>
+                        <DataGridTextColumn  Header="Partidos jugados" Width="100" Binding="{Binding jugados}"/>
+                        <DataGridTextColumn  Header="Ganados" Width="100" Binding="{Binding ganados}"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
             </Grid>
         </Border>
     </Border>
