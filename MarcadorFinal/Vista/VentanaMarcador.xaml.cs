@@ -43,9 +43,15 @@ namespace MarcadorFinal.Vista
             players2 = lines[3];
             estadoEdicion = false;
 
-            miMarcador = new Marcador(players1, players2, sets);
+            //AQUI SI ESTUVIERA IMPLEMENTADO QUE SE PUDIERAN JUGAR 5 SETS, HABRIA QUE PONERLE EN EL CONSTRUCTOR LA VARIABLE SETS
+            miMarcador = new Marcador(players1, players2, 3);
             txtPlayers1.Content = players1;
             txtPlayers2.Content = players2;
+
+            //SETEAMOS LOS NOMBRES Y LOS BOTONES CON LOS NOMBRES QUE LEE DEL ARCHIVO
+            BtnPoinsPlayer1.Content = players1;
+            BtnPoinsPlayer2.Content = players2;
+
             miMarcador.PartidoFinalizado += OnPartidoFinalizado;
         }
 
@@ -126,9 +132,27 @@ namespace MarcadorFinal.Vista
             BtnPoinsPlayer1.IsEnabled = false;
             BtnPoinsPlayer2.IsEnabled = false;
             MessageBox.Show("El ganador del partido es: " + e.Ganador);
-            this.Close();
+
+            //AQUI MIRAMOS SI EL GANADOR ES EL PLAYER 1 O EL 2, ASI LE PASAMOS 1 AL GANADOR Y 0 AL PERDEDOR
+            String p1= txtPlayers1.Content.ToString();
+            String p2=txtPlayers2.Content.ToString(); 
+
+            //EL FALLO DEL PROGRAMA ES QUE COMO SOLO HAY UNA COLUMNA DEPORTE PARA TODOS LOS PARTIDOS, EN LA BASE DE DATOS ESTARA PUESTO EL DEPORTE
+            //ULTIMO SElECCIONADO EN EL ARCHIVO SETTINGS, NO SE PUEDE COMPROBAR SI EL RESTO DE PARTIDOS HAN SIDO PADEL O TENNIS
+            if (p1.Equals(e.Ganador)){
+                Clases.CRUD.insertar(p1, tipo, 1);
+                Clases.CRUD.insertar(p2, tipo, 0);
+            }
+            else
+            {
+                Clases.CRUD.insertar(p1, tipo, 0);
+                Clases.CRUD.insertar(p2, tipo, 1);
+            }
+            
+
             Menu menu = new Menu();
             menu.Show();
+            this.Close();
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)

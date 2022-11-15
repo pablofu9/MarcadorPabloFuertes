@@ -132,10 +132,10 @@
                         <Rectangle Stroke="#6400FF" Fill="#6400FF"  Grid.Row="1" Margin="0,0,0,21"/>
 
                         <ListBox x:Name="listSelector" Background="Transparent" Grid.Row="2" >
-                            <ListBoxItem x:Name="ItemTennis">
+                            <ListBoxItem Name="ItemTennis">
                                 <TextBlock VerticalAlignment="Center"  FontSize="20" FontWeight="Bold" Foreground="White">Tenis</TextBlock>
                             </ListBoxItem>
-                            <ListBoxItem x:Name="ItemPadel">
+                            <ListBoxItem Name="ItemPadel">
                                 <TextBlock VerticalAlignment="Center"  FontSize="20" FontWeight="Bold" Foreground="white">Padel</TextBlock>
                             </ListBoxItem>
 

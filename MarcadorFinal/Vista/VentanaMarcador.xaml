@@ -133,8 +133,7 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                                 <ColumnDefinition />
-                                <ColumnDefinition />
-                                <ColumnDefinition />
+                                
 
                             </Grid.ColumnDefinitions>
                             <Label x:Name="txtPlayers1"  Width="130" Background="Transparent" Foreground="white" FontSize="20"
@@ -146,10 +145,7 @@
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="2" IsEnabled="false"/>
                             <TextBox x:Name="TextSet3Player1" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="3" IsEnabled="false"/>
-                            <TextBox x:Name="TextSet4Player1" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="4" IsEnabled="false" Visibility="Hidden"/>
-                            <TextBox x:Name="TextSet5Player1" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="5" IsEnabled="false" Visibility="Hidden"/>
+
 
 
                             <Label x:Name="txtPlayers2"  Width="130" Background="Transparent" Foreground="white" FontSize="20"
@@ -160,15 +156,12 @@
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="2" IsEnabled="false" Grid.Row="2"/>
                             <TextBox x:Name="TextSet3Player2" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
                                     FontFamily="Monserrat" BorderThickness="0" Grid.Column="3" IsEnabled="false" Grid.Row="2"/>
-                            <TextBox x:Name="TextSet4Player2" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="4" IsEnabled="false" Grid.Row="2" Visibility="Hidden"/>
-                            <TextBox x:Name="TextSet5Player2" Text="0" Width="90" Background="Transparent" Foreground="white" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="5" IsEnabled="false" Grid.Row="2" Visibility="Hidden"/>
+
 
                             <TextBox x:Name="TextPointsPlayer2" Text="0" Width="90" Background="Transparent" Foreground="#FF6400" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="6" IsEnabled="false" Grid.Row="2"/>
+                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="4" IsEnabled="false" Grid.Row="2"/>
                             <TextBox x:Name="TextPointsPlayer1" Text="0" Width="90" Background="Transparent" Foreground="#FF6400" FontSize="20"
-                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="6" IsEnabled="false" Grid.Row="0"/>
+                                    FontFamily="Monserrat" BorderThickness="0" Grid.Column="4" IsEnabled="false" Grid.Row="0"/>
 
                             <Button x:Name="BtnPoinsPlayer1"
                             BorderThickness="0"
@@ -262,8 +255,8 @@
                             FontSize="14"
                             Cursor="Hand"
                             
-                            Grid.Row="4"
-                            Click="btnEdit" Grid.ColumnSpan="3" Margin="92,1,26,14" Grid.Column="4">
+                            Grid.Row="5"
+                            Click="btnEdit" Grid.ColumnSpan="3" Margin="72,3,46,12" Grid.Column="2">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background" Value="#E11111"/>

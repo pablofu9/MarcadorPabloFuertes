@@ -20,6 +20,7 @@ namespace MarcadorFinal.Vista
     /// </summary>
     public partial class Ajustes : Window
     {
+
         String players1;
         String players2;
         int numeroSets;
@@ -27,28 +28,44 @@ namespace MarcadorFinal.Vista
 
         public Ajustes()
         {
-            
+            InitializeComponent();
+            String archivoSettings = @"D:\DAM\INTERFACES\MarcadorDefinitivoGIT\MarcadorFinal\ajustes.txt";
+
             string[] lines = System.IO.File.ReadAllLines(@"D:\DAM\INTERFACES\MarcadorDefinitivoGIT\MarcadorFinal\ajustes.txt");
             tipo = lines[0];
             numeroSets = Int16.Parse(lines[1]);
             players1 = lines[2];
             players2 = lines[3];
-            
-            
-            /*
-            player1.Text = players1;
-            player2.Text = players2;
 
-            if (tipo.Equals("padel"))
+
+            if (File.Exists(archivoSettings))
             {
-                ItemPadel.IsSelected=true;
+                player1.Text = players1;
+                player2.Text = players2;
+
+                if (tipo.Equals("tenis"))
+                {
+                    ItemTennis.IsSelected=true;
+                }
+                else
+                {
+                    ItemPadel.IsSelected = true;
+                }
+
+                if (numeroSets ==3)
+                {
+                    numSets3.IsChecked = true;
+                }
+                else
+                {
+                    numSets5.IsChecked = true;
+                }
             }
-            else
-            {
-                ItemTennis.IsSelected = true;
-            }
-            */
-            InitializeComponent();
+           
+
+            
+            
+            
 
         }
         private void Window_MouseDown(Object sender, MouseButtonEventArgs e)
@@ -71,7 +88,9 @@ namespace MarcadorFinal.Vista
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (numSets3.IsPressed)
+
+            
+            if (numSets3.IsChecked==true)
             {
                 numeroSets = 3;
             }
@@ -85,6 +104,7 @@ namespace MarcadorFinal.Vista
                 tipo = "tenis";
             }
             else { 
+
                 tipo = "padel";
             }
 
