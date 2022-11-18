@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MarcadorFinal.Clases;
+using WpfAnimatedGif;
 
 namespace MarcadorFinal.Vista
 {
@@ -36,7 +37,7 @@ namespace MarcadorFinal.Vista
             InitializeComponent();
 
             //GUARDA LAS LINEAS DEL ARCHIVO EN UN ARAY
-            string[] lines = System.IO.File.ReadAllLines(@"D:\DAM\INTERFACES\MarcadorDefinitivoGIT\MarcadorFinal\ajustes.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\DAM\INTERFACES\ENTREGAS\MarcadorFinal\MarcadorFinal\MarcadorFinal\ajustes.txt");
             tipo = lines[0];
             sets = Int16.Parse(lines[1]);
             players1 = lines[2];
@@ -132,6 +133,7 @@ namespace MarcadorFinal.Vista
             BtnPoinsPlayer1.IsEnabled = false;
             BtnPoinsPlayer2.IsEnabled = false;
             MessageBox.Show("El ganador del partido es: " + e.Ganador);
+            
 
             //AQUI MIRAMOS SI EL GANADOR ES EL PLAYER 1 O EL 2, ASI LE PASAMOS 1 AL GANADOR Y 0 AL PERDEDOR
             String p1= txtPlayers1.Content.ToString();

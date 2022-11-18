@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         MouseDown="Window_MouseDown">
-
+    
     <Border CornerRadius="50">
         <Border.Background>
             <ImageBrush ImageSource="/Vista/fondo.jpg"/>
@@ -125,7 +125,7 @@
 
 
                     <Image Width="160"
-                           Height="160" Source="/Vista/silueta2.png"  />
+                           Height="160"  Source="/Vista/silueta2.png"  />
 
                     <TextBlock Text="Mi marcador"
                                Foreground="white"

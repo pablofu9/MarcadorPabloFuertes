@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Vista\fondo.jpg" />
     <None Remove="Vista\fondo.png" />
+    <None Remove="Vista\ganar.gif" />
     <None Remove="Vista\logo.png" />
     <None Remove="Vista\selieta.jpg" />
     <None Remove="Vista\silueta.png" />
@@ -17,15 +18,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Vista\ganar.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.31" />
     <PackageReference Include="MySqlConnector" Version="2.2.0" />
     <PackageReference Include="SqlKata.Execution" Version="2.4.0" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Vista\fondo.jpg" />
-    <Resource Include="Vista\selieta.jpg" />
-    <Resource Include="Vista\silueta.png" />
     <Resource Include="Vista\silueta2.png" />
   </ItemGroup>
 

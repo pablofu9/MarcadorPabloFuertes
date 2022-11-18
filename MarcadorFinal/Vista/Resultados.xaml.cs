@@ -52,6 +52,7 @@ namespace MarcadorFinal.Vista
             this.Close();
         }
 
+
         
 
        

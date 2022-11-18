@@ -12,6 +12,7 @@ namespace MarcadorFinal.Clases
     }
     internal class Marcador
     {
+        
         private int[][] marcadorSets;
         private int[] puntos;
         private string[] valorPuntos = { "00", "15", "30", "40", "AV" };
